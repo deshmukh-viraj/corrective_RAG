@@ -44,7 +44,7 @@ class LegalRAGSystem:
         )
         self.document_processor = DocumentProcessor()
         self.memory = MemoryError()
-        self.graph = self._create_correction_graph()
+        self.graph = self.create_correction_graph()
 
         self.answer_prompt = ChatPromptTemplate.from_template("""
         You are an expert legal analyst. Use the provided context to answer the question accurately and comprehensively.
