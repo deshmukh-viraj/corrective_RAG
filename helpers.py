@@ -152,4 +152,5 @@ def create_processing_summary(results: Dict) -> str:
     total_chunks = results.get("total_chunks_added", 0)
     
     summary_lines = [
-        f"✅ Successfully processed: {successful} / {
+        f"✅ Successfully processed: {successful} / {total}" 
+    ]

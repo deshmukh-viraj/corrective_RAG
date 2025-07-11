@@ -143,7 +143,7 @@ class DocumentProcessor:
 
         try:
             docs = self.vectorstore.similarity_search(query, k=k)
-            logger.info(f"Retrievd {len(docs)} documents for query: {query[:50]...}")
+            logger.info(f"Retrievd {len(docs)} documents for query: {query[:50]}")
             return docs
         except Exception as e:
             logger.error(f"Error searching documetns: {str(e)}")
