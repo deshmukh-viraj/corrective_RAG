@@ -1,0 +1,9 @@
+langchain
+langchain_community
+langgraph
+faiss-cpu
+pypdf
+python-dotenv
+langchain_huggingface
+langchain_groq
+gradio
