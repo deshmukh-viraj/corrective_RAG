@@ -9,7 +9,8 @@ class Config:
     GROQ_API_KEY = os.getenv("GROQ_API_KEY")
 
     LLM_MODEL =" deepseek-r1-distill-llama-70b"
-    EMBEDDING_MODEL = "all-MiniLM-L6-v2"
+    EMBEDDING_MODEL = "sentence-transformers/all-MiniLM-L6-v2"
+
     LLM_TEMPERATURE = 0.0
 
     CHUNK_SIZE=1000
