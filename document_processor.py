@@ -22,7 +22,7 @@ class DocumentProcessor:
         self.text_splitter=RecursiveCharacterTextSplitter(
             chunk_size=Config.CHUNK_SIZE,
             chunk_overlap=Config.CHUNK_OVERLAP,
-            seperators=["\n\n", "\n", ".","1","?",","," ",""]
+            separators=["\n\n", "\n", ".","1","?",","," ",""]
 
         )
         self.vectorstore=None
