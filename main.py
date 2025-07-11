@@ -161,7 +161,7 @@ class LegalRAGApp:
                     file_upload = gr.File(
                         label="Upload Legal Documents",
                         file_count="multiple",
-                        file_types=Config.LEGAL_DOCUMENT_TYPES,
+                        file_types=Config.LEGAL_DOCUMENTS_TYPES,
                         height=120
                     )
                     
