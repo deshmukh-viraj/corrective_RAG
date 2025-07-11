@@ -36,7 +36,7 @@ class Config:
 
     @classmethod
     def validate_config(cls):
-        if not cls.HUGGINGFACE_API_KEY == "HUGGINGFACE_API_KEY":
+        if not cls.HUGGINGFACE_API_KEY:
             raise ValueError(f" Hugging Face key not configured")
         cls.setup_directories()
         return True
