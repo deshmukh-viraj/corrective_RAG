@@ -8,7 +8,7 @@ class Config:
     HUGGINGFACE_API_KEY = os.getenv("HUGGINGFACE_API_KEY")
     GROQ_API_KEY = os.getenv("GROQ_API_KEY")
 
-    LLM_MODEL =" deepseek-r1-distill-llama-70b"
+    LLM_MODEL ="deepseek-r1-distill-llama-70b"
     EMBEDDING_MODEL = "sentence-transformers/all-MiniLM-L6-v2"
 
     LLM_TEMPERATURE = 0.0
