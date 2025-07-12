@@ -150,7 +150,7 @@ class DocumentProcessor:
             raise
 
     
-    def get_vectorestore_stats(self) -> Dict:
+    def get_vectorstore_stats(self) -> Dict:
         if self.vectorstore is None:
             return {
                 "total_documents": 0,

@@ -43,7 +43,7 @@ class LegalRAGSystem:
             temperature=Config.LLM_TEMPERATURE
         )
         self.document_processor = DocumentProcessor()
-        self.memory = MemoryError()
+        self.memory = MemorySaver()
         self.graph = self.create_correction_graph()
 
         self.answer_prompt = ChatPromptTemplate.from_template("""

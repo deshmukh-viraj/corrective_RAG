@@ -25,9 +25,9 @@ class Config:
 
     GRADIO_SHARE = False
     GRADIO_SERVER_NAME = "0.0.0.0"
-    GRADIO_SERVER_PORT = 7860
+    GRADIO_SERVER_PORT = 8080
 
-    LEGAL_DOCUMENTS_TYPES = [".pdf", ".docx", ".txt"]
+    LEGAL_DOCUMENT_TYPES = [".pdf", ".docx", ".txt"]
     MAX_FILE_SIZE_MB = 50
 
     @classmethod

@@ -9,33 +9,41 @@ logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
 def save_uploaded_file(uploaded_file, upload_dir: str) -> str:
-    """Save uploaded file to specified directory"""
+    """Save uploaded file to specified directory."""
     try:
         upload_path = Path(upload_dir)
         upload_path.mkdir(parents=True, exist_ok=True)
-        
-        # Generate unique filename if file already exists
-        file_path = upload_path / uploaded_file.name
+
+        # Use filename and source path depending on the Gradio input type
+        if hasattr(uploaded_file, "name") and os.path.exists(uploaded_file.name):
+            # Handle NamedString from Gradio (path string to file)
+            src_path = uploaded_file.name
+            filename = Path(src_path).name
+        else:
+            raise ValueError("Unsupported file type or structure from Gradio")
+
+        # Generate unique filename if already exists
+        file_path = upload_path / filename
         counter = 1
         while file_path.exists():
-            name_parts = uploaded_file.name.rsplit('.', 1)
+            name_parts = filename.rsplit('.', 1)
             if len(name_parts) == 2:
                 name, ext = name_parts
                 file_path = upload_path / f"{name}_{counter}.{ext}"
             else:
-                file_path = upload_path / f"{uploaded_file.name}_{counter}"
+                file_path = upload_path / f"{filename}_{counter}"
             counter += 1
-        
-        # Save file
-        with open(file_path, "wb") as f:
-            shutil.copyfileobj(uploaded_file, f)
-        
+
+        # Copy the file from the temp path to your uploads folder
+        shutil.copyfile(src_path, file_path)
+
         logger.info(f"Saved uploaded file: {file_path}")
         return str(file_path)
-        
+
     except Exception as e:
         logger.error(f"Error saving uploaded file: {str(e)}")
         raise
+
 
 def format_confidence_score(confidence: float) -> str:
     """Format confidence score as percentage with color coding"""
