@@ -4,10 +4,10 @@ An AI-powered Legal Document Analysis System that uses **LangGraph**, **LangChai
 
 ## 🚀 Features
 
-- ✅ **Upload legal documents** (PDF, DOCX, TXT)
-- 🔍 **Ask legal questions** in natural language
+- ✅ **Upload documents** (PDF, DOCX, TXT)
+- 🔍 **Ask questions** in natural language
 - 🔄 **Self-correcting answer generation** (multi-iteration LangGraph)
-- 📋 **Cites specific document clauses** and legal terms
+- 📋 **Cites specific document clauses** and terms
 - 🔒 **Verifies answer accuracy**, hallucinations, and missing information
 - 📊 **Confidence scores**, correction logs, and source tracking
 - 🎯 **Easy-to-use Gradio UI**
@@ -23,14 +23,14 @@ An AI-powered Legal Document Analysis System that uses **LangGraph**, **LangChai
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/yourusername/legal-rag-system.git
-   cd legal-rag-system
+   git clone https://github.com/deshmukh-viraj/corrective_RAG.git
+   cd corrective_RAG
    ```
 
 2. **Create virtual environment**
    ```bash
    python -m venv venv
-   source venv/bin/activate  # On Windows: venv\Scripts\activate
+   source venv\Scripts\activate
    ```
 
 3. **Install dependencies**
@@ -40,13 +40,12 @@ An AI-powered Legal Document Analysis System that uses **LangGraph**, **LangChai
 
 4. **Set up environment variables**
    ```bash
-   cp .env.example .env
    # Edit .env file and add your API keys
    ```
 
 5. **Run the application**
    ```bash
-   python app.py
+   python main.py
    ```
 
 ## 🔧 Environment Variables
@@ -57,7 +56,7 @@ Create a `.env` file in the root directory:
 GROQ_API_KEY=your_groq_api_key_here
 LANGCHAIN_API_KEY=your_langchain_api_key_here
 LANGCHAIN_TRACING_V2=true
-LANGCHAIN_PROJECT=legal-rag-system
+LANGCHAIN_PROJECT=corrective-rag-system
 ```
 
 ## 📖 Usage
@@ -68,13 +67,13 @@ LANGCHAIN_PROJECT=legal-rag-system
    ```
 
 2. **Access the web interface**
-   - Open your browser and navigate to `http://localhost:7860`
+   - Open your browser and navigate to `http://localhost:8501`
 
-3. **Upload legal documents**
+3. **Upload documents**
    - Click "Upload Documents" and select your PDF, DOCX, or TXT files
    - Wait for processing and indexing to complete
 
-4. **Ask legal questions**
+4. **Ask questions**
    - Type your question in natural language
    - The system will analyze documents and provide citations
    - Review confidence scores and correction logs
@@ -83,7 +82,7 @@ LANGCHAIN_PROJECT=legal-rag-system
 
 ### Core Components
 
-- **Document Processing**: Extracts and chunks legal documents
+- **Document Processing**: Extracts and chunks documents
 - **Vector Store**: Stores document embeddings for retrieval
 - **LangGraph Workflow**: Manages self-correction iterations
 - **Groq LLM**: Provides language understanding and generation
@@ -102,7 +101,7 @@ LANGCHAIN_PROJECT=legal-rag-system
 ### Main Functions
 
 #### `process_documents(files)`
-Processes uploaded legal documents and creates vector embeddings.
+Processes uploaded documents and creates vector embeddings.
 
 **Parameters:**
 - `files` (List[File]): List of uploaded document files
@@ -110,18 +109,17 @@ Processes uploaded legal documents and creates vector embeddings.
 **Returns:**
 - `status` (str): Processing status message
 
-#### `ask_legal_question(question, chat_history)`
-Processes legal questions using RAG with self-correction.
+#### `ask_question(question, chat_history)`
+Processes questions using RAG with self-correction.
 
 **Parameters:**
-- `question` (str): Legal question in natural language
+- `question` (str): Question in natural language
 - `chat_history` (List): Previous conversation history
 
 **Returns:**
 - `answer` (str): Generated answer with citations
 - `confidence` (float): Confidence score (0-1)
 - `sources` (List[str]): Referenced document sources
-
 
 
 ## 🙏 Acknowledgments
@@ -131,22 +129,6 @@ Processes legal questions using RAG with self-correction.
 - Gradio for the intuitive UI framework
 - The open-source community for various dependencies
 
-## 📞 Support
-
-If you encounter any issues or have questions:
-
-1. Check the [Issues](https://github.com/yourusername/legal-rag-system/issues) page
-2. Create a new issue with detailed description
-3. Join our [Discord community](https://discord.gg/your-discord) for discussions
-
-## 🔄 Changelog
-
-### v1.0.0 (2024-01-15)
-- Initial release with basic RAG functionality
-- Self-correction pipeline implementation
-- Gradio web interface
-- Support for PDF, DOCX, and TXT documents
-
 ---
 
-**⚠️ Disclaimer**: This system is for informational purposes only and should not be considered as legal advice. Always consult with qualified legal professionals for legal matters.
+**⚠️ Disclaimer**: This system is for informational purposes only. Always verify important information from reliable sources.
