@@ -40,7 +40,7 @@ An AI-powered Legal Document Analysis System that uses **LangGraph**, **LangChai
 
 4. **Set up environment variables**
    ```bash
-   # Edit .env file and add your API keys
+   .env
    ```
 
 5. **Run the application**
