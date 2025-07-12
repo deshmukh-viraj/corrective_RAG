@@ -53,8 +53,8 @@ An AI-powered Legal Document Analysis System that uses **LangGraph**, **LangChai
 Create a `.env` file in the root directory:
 
 ```env
-GROQ_API_KEY=your_groq_api_key_here
-LANGCHAIN_API_KEY=your_langchain_api_key_here
+GROQ_API_KEY=GROQ_API_KEY
+LANGCHAIN_API_KEY=LANGCHAIN_API_KEY
 LANGCHAIN_TRACING_V2=true
 LANGCHAIN_PROJECT=corrective-rag-system
 ```
